@@ -1,10 +1,10 @@
-//{{NO_DEPENDENCIES}}
+п»ї//{{NO_DEPENDENCIES}}
 // Microsoft Visual C++ generated include file.
 // Used by RectShot.rc
 
 #define IDI_RECTSHOT_ICON                      101
 
-// Следующие стандартные значения для новых объектов
+// РЎР»РµРґСѓСЋС‰РёРµ СЃС‚Р°РЅРґР°СЂС‚РЅС‹Рµ Р·РЅР°С‡РµРЅРёСЏ РґР»СЏ РЅРѕРІС‹С… РѕР±СЉРµРєС‚РѕРІ
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS

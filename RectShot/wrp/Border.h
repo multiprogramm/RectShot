@@ -1,8 +1,8 @@
-#pragma once
+п»ї#pragma once
 
 namespace wrp {
 
-// Размеры бортика с четырёх сторон
+// Р Р°Р·РјРµСЂС‹ Р±РѕСЂС‚РёРєР° СЃ С‡РµС‚С‹СЂС‘С… СЃС‚РѕСЂРѕРЅ
 struct Border
 {
 	Border() = default;

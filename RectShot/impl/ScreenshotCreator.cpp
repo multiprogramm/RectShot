@@ -1,4 +1,4 @@
-#include "ScreenshotCreator.h"
+﻿#include "ScreenshotCreator.h"
 #include <string>
 #include <sstream>
 #include <filesystem>

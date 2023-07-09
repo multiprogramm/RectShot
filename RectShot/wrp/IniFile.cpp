@@ -1,4 +1,4 @@
-#include "IniFile.h"
+﻿#include "IniFile.h"
 #include <Windows.h>
 #include <filesystem>
 #include <algorithm>

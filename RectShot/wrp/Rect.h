@@ -1,10 +1,10 @@
-#pragma once
+п»ї#pragma once
 #include "Point.h"
 #include "Border.h"
 
 namespace wrp {
 
-// Информация о попадении точки в прямоугольник
+// РРЅС„РѕСЂРјР°С†РёСЏ Рѕ РїРѕРїР°РґРµРЅРёРё С‚РѕС‡РєРё РІ РїСЂСЏРјРѕСѓРіРѕР»СЊРЅРёРє
 enum class HitTestInfo
 {
 	In = 1,
@@ -22,7 +22,7 @@ inline bool Check( int value, HitTestInfo info )
 	return ( value & static_cast<int>( info ) ) != 0;
 }
 
-// Прямоугольник
+// РџСЂСЏРјРѕСѓРіРѕР»СЊРЅРёРє
 struct Rect
 {
 	Rect() = default;

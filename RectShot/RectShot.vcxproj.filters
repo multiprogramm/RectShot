@@ -68,9 +68,6 @@
     <ClInclude Include="wrp\Window.h">
       <Filter>wrp</Filter>
     </ClInclude>
-    <ClInclude Include="res\Border.h">
-      <Filter>wrp</Filter>
-    </ClInclude>
     <ClInclude Include="wrp\RAssert.h">
       <Filter>wrp</Filter>
     </ClInclude>
@@ -79,6 +76,9 @@
     </ClInclude>
     <ClInclude Include="impl\ScreenshotCreator.h">
       <Filter>impl</Filter>
+    </ClInclude>
+    <ClInclude Include="wrp\Border.h">
+      <Filter>wrp</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

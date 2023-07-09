@@ -1,4 +1,4 @@
-#include "SelectionWindow.h"
+п»ї#include "SelectionWindow.h"
 #include <windowsx.h>
 #include <dwmapi.h>
 #include "Helpers.h"
@@ -31,7 +31,7 @@ void SelectionWindow::Create()
 
 bool SelectionWindow::OnCreate( WPARAM& wParam, LPARAM& lParam )
 {
-	// Определяем border_thickness
+	// РћРїСЂРµРґРµР»СЏРµРј border_thickness
 	if( ::GetWindowLongPtr( GetHWnd(), GWL_STYLE ) & WS_THICKFRAME )
 	{
 		RECT rect;
@@ -44,7 +44,7 @@ bool SelectionWindow::OnCreate( WPARAM& wParam, LPARAM& lParam )
 		m_BorderThickness = wrp::Border( 1 );
 	}
 
-	// Сбрасываем margins
+	// РЎР±СЂР°СЃС‹РІР°РµРј margins
 	{
 		const MARGINS margins = { 0 };
 		::DwmExtendFrameIntoClientArea( GetHWnd(), &margins );

@@ -1,4 +1,4 @@
-#include "Clipboard.h"
+﻿#include "Clipboard.h"
 #include "RAssert.h"
 #include "HGlobalLock.h"
 

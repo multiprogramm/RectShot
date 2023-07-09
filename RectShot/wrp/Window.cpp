@@ -1,4 +1,4 @@
-#include "Window.h"
+п»ї#include "Window.h"
 #include "Helpers.h"
 #include "RAssert.h"
 
@@ -30,7 +30,7 @@ HWND Window::Create( HWND parrent, const WndCreateData& data )
 		wc.style = data.ClassStyle;
 		wc.lpfnWndProc = Window::WndProcShared;
 		wc.cbClsExtra = NULL;
-		wc.cbWndExtra = sizeof( void* ); // Размер одного указателя
+		wc.cbWndExtra = sizeof( void* ); // Р Р°Р·РјРµСЂ РѕРґРЅРѕРіРѕ СѓРєР°Р·Р°С‚РµР»СЏ
 		wc.hInstance = instance;
 		wc.hIcon = data.Icon;
 		wc.hCursor = data.Cursor;

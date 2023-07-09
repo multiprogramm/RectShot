@@ -179,8 +179,8 @@
     <ClInclude Include="impl\FullScreenWindow.h" />
     <ClInclude Include="impl\ScreenshotCreator.h" />
     <ClInclude Include="impl\SelectionWindow.h" />
-    <ClInclude Include="res\Border.h" />
     <ClInclude Include="res\resource.h" />
+    <ClInclude Include="wrp\Border.h" />
     <ClInclude Include="wrp\Clipboard.h" />
     <ClInclude Include="wrp\GDI.h" />
     <ClInclude Include="wrp\Helpers.h" />

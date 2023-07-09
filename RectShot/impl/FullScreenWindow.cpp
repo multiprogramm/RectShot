@@ -1,4 +1,4 @@
-#include "FullScreenWindow.h"
+п»ї#include "FullScreenWindow.h"
 #include "Helpers.h"
 #include "resource.h"
 #include "RAssert.h"
@@ -14,7 +14,7 @@ void FullScreenWindow::Create()
 	data.ExWindowStyle = WS_EX_TRANSPARENT | WS_EX_TOOLWINDOW | WS_EX_TOPMOST | WS_EX_NOACTIVATE;
 	data.Rect = wrp::Helpers::GetVirtualScreen();
 #ifdef _DEBUG
-	// Для отладки будем накрывать не весь "экран", а только левую половину
+	// Р”Р»СЏ РѕС‚Р»Р°РґРєРё Р±СѓРґРµРј РЅР°РєСЂС‹РІР°С‚СЊ РЅРµ РІРµСЃСЊ "СЌРєСЂР°РЅ", Р° С‚РѕР»СЊРєРѕ Р»РµРІСѓСЋ РїРѕР»РѕРІРёРЅСѓ
 	data.Rect.Width /= 2;
 #endif
 	data.Cursor = ::LoadCursor( NULL, IDC_CROSS );

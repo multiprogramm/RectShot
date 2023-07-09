@@ -1,4 +1,4 @@
-#include <memory>
+﻿#include <memory>
 #include "Helpers.h"
 #include "Window.h"
 #include "FullScreenWindow.h"

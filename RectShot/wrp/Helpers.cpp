@@ -1,4 +1,4 @@
-#include "Helpers.h"
+﻿#include "Helpers.h"
 #include <memory>
 #include <filesystem>
 #include "RAssert.h"
