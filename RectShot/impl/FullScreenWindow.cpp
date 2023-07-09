@@ -73,7 +73,7 @@ bool FullScreenWindow::OnMouseButton( const wrp::Point& point, wrp::MouseButton 
 				if( !m_ModifySelectionAfterCreation )
 				{
 					ScreenshotCreator screenshot_creator;
-					screenshot_creator.Create( GetWindowRect() );
+					screenshot_creator.Create( GetCurrentRect() );
 				}
 				else
 					::SetForegroundWindow( m_SelectionWindow.GetHWnd() );
