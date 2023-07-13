@@ -1,9 +1,7 @@
 ﻿#pragma once
 #include <Windows.h>
 #include <gdiplus.h>
-#include <vector>
 #include <string>
-#include <memory>
 #include "RAssert.h"
 
 namespace wrp {
@@ -11,31 +9,14 @@ namespace wrp {
 class GDI
 {
 public:
-	static GDI& Get()
-	{
-		static GDI gdi;
-		return gdi;
-	}
+	static GDI& Get();
 
 	GDI( const GDI& ) = delete;
 	GDI& operator=( const GDI& ) = delete;
 
 private:
-	GDI()
-	{
-		assert( Gdiplus::Status::Ok == Gdiplus::GdiplusStartup( &m_GdiplusToken, &m_GdiplusStartupInput, NULL ) );
-	}
-
-	~GDI()
-	{
-		try
-		{
-			Gdiplus::GdiplusShutdown( m_GdiplusToken );
-		}
-		catch( ... )
-		{
-		}
-	}
+	GDI();
+	~GDI();
 
 private:
 	Gdiplus::GdiplusStartupInput m_GdiplusStartupInput;
@@ -49,18 +30,8 @@ public:
 	DCWrp( const DCWrp& ) = delete;
 	DCWrp& operator=( const DCWrp& ) = delete;
 
-	explicit DCWrp( HDC hdc )
-		: m_Hdc( hdc )
-	{
-	}
-	~DCWrp()
-	{
-		if( m_Hdc != NULL )
-		{
-			::DeleteDC( m_Hdc );
-			m_Hdc = NULL;
-		}
-	}
+	explicit DCWrp( HDC hdc );
+	~DCWrp();
 
 	HDC Get() const { return m_Hdc; }
 
@@ -75,19 +46,9 @@ public:
 	WindowDC( const WindowDC& ) = delete;
 	WindowDC& operator=( const WindowDC& ) = delete;
 
-	explicit WindowDC( HWND hwnd )
-		: m_Hwnd( hwnd )
-		, m_Hdc( ::GetDC( m_Hwnd ) )
-	{}
-	~WindowDC()
-	{
-		if( m_Hdc != NULL )
-		{
-			::ReleaseDC( m_Hwnd, m_Hdc );
-			m_Hdc = NULL;
-		}
-	}
-
+	explicit WindowDC( HWND hwnd );
+	~WindowDC();
+	
 	HDC Get() const { return m_Hdc; }
 
 private:
@@ -102,20 +63,8 @@ public:
 	WindowDCPaint( const WindowDCPaint& ) = delete;
 	WindowDCPaint& operator=( const WindowDCPaint& ) = delete;
 
-	explicit WindowDCPaint( HWND hwnd )
-		: m_Hwnd( hwnd )
-		, m_PS()
-		, m_Hdc( ::BeginPaint( m_Hwnd, &m_PS ) )
-	{
-	}
-	~WindowDCPaint()
-	{
-		if( m_Hdc != NULL )
-		{
-			::EndPaint( m_Hwnd, &m_PS );
-			m_Hdc = NULL;
-		}
-	}
+	explicit WindowDCPaint( HWND hwnd );
+	~WindowDCPaint();
 
 	HDC Get() const { return m_Hdc; }
 	PAINTSTRUCT& GetPaintStruct(){ return m_PS; }
@@ -133,19 +82,8 @@ public:
 	ObjSelector( const ObjSelector& ) = delete;
 	ObjSelector& operator=( const ObjSelector& ) = delete;
 
-	explicit ObjSelector( HDC hdc, HGDIOBJ obj )
-		: m_Hdc( hdc )
-	{
-		m_OldObj = ::SelectObject( m_Hdc, obj );
-	}
-	~ObjSelector()
-	{
-		if( m_Hdc != NULL )
-		{
-			::SelectObject( m_Hdc, m_OldObj );
-			m_Hdc = NULL;
-		}
-	}
+	explicit ObjSelector( HDC hdc, HGDIOBJ obj );
+	~ObjSelector();
 
 private:
 	HDC m_Hdc = NULL;
@@ -179,27 +117,6 @@ private:
 	HandleType m_Handle = NULL;
 };
 
-static bool GetEncoderClsid( CLSID& clsid, const std::wstring& format )
-{
-	UINT num_encoders = 0;
-	UINT array_size_bytes = 0;
-	assert( Gdiplus::Status::Ok == Gdiplus::GetImageEncodersSize( &num_encoders, &array_size_bytes ) );
-
-	std::vector<BYTE> data( array_size_bytes );
-	Gdiplus::ImageCodecInfo* codecs = reinterpret_cast<Gdiplus::ImageCodecInfo*>( &data[0] );
-	assert( Gdiplus::Status::Ok == Gdiplus::GetImageEncoders( num_encoders, array_size_bytes, codecs ) );
-
-	for( UINT i = 0; i < num_encoders; ++i )
-	{
-		const Gdiplus::ImageCodecInfo& codec = codecs[i];
-		if( codec.MimeType == format )
-		{
-			clsid = codec.Clsid;
-			return true;
-		}
-	}
-
-	return false;
-}
+bool GetEncoderClsid( CLSID& clsid, const std::wstring& format );
 
 } // namespace wrp

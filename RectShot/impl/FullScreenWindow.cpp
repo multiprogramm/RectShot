@@ -9,7 +9,6 @@
 void FullScreenWindow::Create()
 {
 	wrp::WndCreateData data;
-	data.ClassStyle = 0;
 	data.WindowStyle = WS_POPUP;
 	data.ExWindowStyle = WS_EX_TRANSPARENT | WS_EX_TOOLWINDOW | WS_EX_TOPMOST | WS_EX_NOACTIVATE;
 	data.Rect = wrp::Helpers::GetVirtualScreen();

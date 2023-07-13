@@ -171,6 +171,7 @@
     <ClCompile Include="impl\ScreenshotCreator.cpp" />
     <ClCompile Include="impl\SelectionWindow.cpp" />
     <ClCompile Include="wrp\Clipboard.cpp" />
+    <ClCompile Include="wrp\GDI.cpp" />
     <ClCompile Include="wrp\Helpers.cpp" />
     <ClCompile Include="wrp\IniFile.cpp" />
     <ClCompile Include="wrp\Window.cpp" />

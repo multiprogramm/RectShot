@@ -36,6 +36,9 @@
     <ClCompile Include="impl\ScreenshotCreator.cpp">
       <Filter>impl</Filter>
     </ClCompile>
+    <ClCompile Include="wrp\GDI.cpp">
+      <Filter>wrp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="impl\SelectionWindow.h">
