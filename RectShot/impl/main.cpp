@@ -5,7 +5,9 @@
 #include "SelectionWindow.h"
 #include "GDI.h"
 
-int WINAPI wWinMain( HINSTANCE, HINSTANCE, LPTSTR, int )
+namespace {
+
+int DoWork()
 {
 	wrp::GDI::Get();
 
@@ -18,4 +20,24 @@ int WINAPI wWinMain( HINSTANCE, HINSTANCE, LPTSTR, int )
 	full_screen_window->SetSelectionWindow( selection_window->GetHWnd() );
 
 	return wrp::Helpers::MessageLoop();
+}
+
+} // namespace
+
+int WINAPI wWinMain( HINSTANCE, HINSTANCE, LPTSTR, int )
+{
+	try
+	{
+		return DoWork();
+	}
+	catch( const std::exception& ex )
+	{
+		::MessageBoxA( NULL, ex.what(), NULL, MB_OK | MB_ICONERROR );
+	}
+	catch( ... )
+	{
+		::MessageBoxA( NULL, "Unknown exception", NULL, MB_OK | MB_ICONERROR );
+	}
+
+	return 1;
 }
