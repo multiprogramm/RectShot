@@ -14,6 +14,9 @@
 
 #endif
 
+#include <Windows.h>
+#include <string>
+
 namespace wrp {
 
 // "Сквозная" проверка на не null

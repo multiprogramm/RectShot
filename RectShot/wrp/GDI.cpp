@@ -1,5 +1,4 @@
-﻿#pragma once
-#include <GDI.h>
+﻿#include <GDI.h>
 #include <vector>
 #include <memory>
 

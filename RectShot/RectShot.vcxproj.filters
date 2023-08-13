@@ -39,6 +39,9 @@
     <ClCompile Include="wrp\GDI.cpp">
       <Filter>wrp</Filter>
     </ClCompile>
+    <ClCompile Include="wrp\HGlobalLock.cpp">
+      <Filter>wrp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="impl\SelectionWindow.h">
