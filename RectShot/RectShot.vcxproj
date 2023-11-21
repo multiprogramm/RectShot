@@ -202,6 +202,9 @@
   <ItemGroup>
     <Image Include="res\RectShot.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <Manifest Include="res\RectShot.manifest" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

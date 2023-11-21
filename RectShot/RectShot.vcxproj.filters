@@ -102,4 +102,9 @@
       <Filter>res</Filter>
     </Image>
   </ItemGroup>
+  <ItemGroup>
+    <Manifest Include="res\RectShot.manifest">
+      <Filter>res</Filter>
+    </Manifest>
+  </ItemGroup>
 </Project>
